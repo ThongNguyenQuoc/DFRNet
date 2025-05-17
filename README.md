@@ -45,3 +45,19 @@ We train model 'DFRNet' using:
 
 [GDrive](https://drive.google.com/file/d/1JgmzL9OLTqDAZE86pBgETtSQL4USKTFy/view?usp=sharing)
 
+3. Download the training set (`MS1MV2-Arcface`) and place it in your directory. Each training dataset includes the following 10 files:
+
+```Shell
+    faces_emore/
+       train.idx
+       train.rec
+       property
+       lfw.bin
+       cfp_fp.bin
+       agedb_30.bin
+       calfw.bin
+       cfp_ff.bin
+       cplfw.bin
+       vgg2_fp.bin
+```
+
