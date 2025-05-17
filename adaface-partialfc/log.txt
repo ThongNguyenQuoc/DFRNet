@@ -1,0 +1,647 @@
+W0509 03:59:20.536000 701 torch/distributed/run.py:793] 
+W0509 03:59:20.536000 701 torch/distributed/run.py:793] *****************************************
+W0509 03:59:20.536000 701 torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0509 03:59:20.536000 701 torch/distributed/run.py:793] *****************************************
+Training: 2025-05-09 03:59:25,348-rank_id: 0
+Using AdaFace dataloader
+Using AdaFace dataloader
+/usr/local/lib/python3.11/dist-packages/torch/utils/data/dataloader.py:617: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+/usr/local/lib/python3.11/dist-packages/torch/utils/data/dataloader.py:617: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+Training: 2025-05-09 03:59:31,183-Backbone loaded successfully from /kaggle/input/python_v2/pytorch/default/1/375276backbone.pth
+
+\AdaFace with the following property
+self.m 0.4
+self.h 0.333
+self.s 64.0
+self.t_alpha 1.0
+
+\AdaFace with the following property
+self.m 0.4
+self.h 0.333
+self.s 64.0
+self.t_alpha 1.0
+/kaggle/working/output/rank_0_softmax_weight.pt
+/kaggle/working/output/rank_0_softmax_weight_mom.pt
+/kaggle/working/output/rank_1_softmax_weight.pt
+/kaggle/working/output/rank_1_softmax_weight_mom.pt
+/kaggle/input/project2/adaface-partialfc-master/partial_fc.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.weight: torch.Tensor = torch.load(self.weight_name)
+/kaggle/input/project2/adaface-partialfc-master/partial_fc.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.weight: torch.Tensor = torch.load(self.weight_name)
+Training: 2025-05-09 03:59:31,585-softmax weight init!
+Training: 2025-05-09 03:59:31,585-softmax weight mom init!
+Training: 2025-05-09 03:59:31,587-: loss                     adaface
+Training: 2025-05-09 03:59:31,587-: network                  r50
+Training: 2025-05-09 03:59:31,587-: resume                   True
+Training: 2025-05-09 03:59:31,587-: output                   /kaggle/working/output
+Training: 2025-05-09 03:59:31,587-: dataset                  ms1mv2
+Training: 2025-05-09 03:59:31,587-: embedding_size           512
+Training: 2025-05-09 03:59:31,587-: sample_rate              0.1
+Training: 2025-05-09 03:59:31,587-: fp16                     True
+Training: 2025-05-09 03:59:31,587-: momentum                 0.9
+Training: 2025-05-09 03:59:31,587-: weight_decay             0.0005
+Training: 2025-05-09 03:59:31,587-: batch_size               256
+Training: 2025-05-09 03:59:31,587-: lr                       0.1
+Training: 2025-05-09 03:59:31,587-: rec                      /kaggle/input/ms1mv2/faces_emore/faces_emore
+Training: 2025-05-09 03:59:31,588-: num_classes              85742
+Training: 2025-05-09 03:59:31,588-: num_image                5822653
+Training: 2025-05-09 03:59:31,588-: num_epoch                40
+Training: 2025-05-09 03:59:31,588-: warmup_epoch             -1
+Training: 2025-05-09 03:59:31,588-: decay_epoch              [8, 12, 15, 18]
+Training: 2025-05-09 03:59:31,588-: val_targets              ['lfw']
+Training: 2025-05-09 03:59:31,588-: warmup_step              -11372
+Training: 2025-05-09 03:59:31,588-: total_step               454880
+Training: 2025-05-09 03:59:31,588-: decay_step               [90978, 136468, 170585, 204702]
+/kaggle/input/project2/adaface-partialfc-master/utils/utils_amp.py:34: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  GradScaler.__init__(self, init_scale=init_scale, growth_interval=growth_interval)
+Start training
+loading bin 0
+loading bin 1000
+loading bin 2000
+loading bin 3000
+loading bin 4000
+loading bin 5000
+loading bin 6000
+loading bin 7000
+loading bin 8000
+loading bin 9000
+loading bin 10000
+loading bin 11000
+torch.Size([12000, 3, 112, 112])
+/kaggle/input/project2/adaface-partialfc-master/utils/utils_amp.py:34: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  GradScaler.__init__(self, init_scale=init_scale, growth_interval=growth_interval)
+Start training
+Training: 2025-05-09 04:03:42,019-Speed 568.81 samples/sec   Loss 52.8493   LearningRate 0.100000   Epoch: 0   Global Step: 200   Fp16 Grad Scale: 1024   Required: 133 hours
+Training: 2025-05-09 04:05:12,157-Speed 568.07 samples/sec   Loss 49.6183   LearningRate 0.100000   Epoch: 0   Global Step: 300   Fp16 Grad Scale: 2048   Required: 127 hours
+Training: 2025-05-09 04:06:42,470-Speed 566.96 samples/sec   Loss 46.7448   LearningRate 0.100000   Epoch: 0   Global Step: 400   Fp16 Grad Scale: 4096   Required: 124 hours
+Training: 2025-05-09 04:08:13,101-Speed 564.97 samples/sec   Loss 46.6122   LearningRate 0.100000   Epoch: 0   Global Step: 500   Fp16 Grad Scale: 8192   Required: 122 hours
+Training: 2025-05-09 04:09:43,921-Speed 563.80 samples/sec   Loss 43.7104   LearningRate 0.100000   Epoch: 0   Global Step: 600   Fp16 Grad Scale: 16384   Required: 121 hours
+Training: 2025-05-09 04:11:14,782-Speed 563.54 samples/sec   Loss 42.6183   LearningRate 0.100000   Epoch: 0   Global Step: 700   Fp16 Grad Scale: 32768   Required: 120 hours
+Training: 2025-05-09 04:12:45,121-Speed 566.79 samples/sec   Loss 41.0066   LearningRate 0.100000   Epoch: 0   Global Step: 800   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 04:14:15,491-Speed 566.60 samples/sec   Loss 40.2197   LearningRate 0.100000   Epoch: 0   Global Step: 900   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 04:15:46,179-Speed 564.61 samples/sec   Loss 39.2682   LearningRate 0.100000   Epoch: 0   Global Step: 1000   Fp16 Grad Scale: 32768   Required: 118 hours
+testing verification..
+(12000, 512)
+infer time 34.609079
+Training: 2025-05-09 04:16:25,004-[lfw][1000]XNorm: 26.177669
+Training: 2025-05-09 04:16:25,004-[lfw][1000]Accuracy-Flip: 0.69517+-0.01516
+Training: 2025-05-09 04:16:25,004-[lfw][1000]Accuracy-Highest: 0.69517
+Training: 2025-05-09 04:16:25,005-[+][1000]Score / Score-Highest: 0.69517 / 0.00000
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.6951666666666666.pth
+Training: 2025-05-09 04:17:55,963-Speed 394.52 samples/sec   Loss 38.0333   LearningRate 0.100000   Epoch: 0   Global Step: 1100   Fp16 Grad Scale: 32768   Required: 122 hours
+Training: 2025-05-09 04:19:26,750-Speed 564.00 samples/sec   Loss 36.9702   LearningRate 0.100000   Epoch: 0   Global Step: 1200   Fp16 Grad Scale: 32768   Required: 121 hours
+Training: 2025-05-09 04:20:57,262-Speed 565.71 samples/sec   Loss 36.3253   LearningRate 0.100000   Epoch: 0   Global Step: 1300   Fp16 Grad Scale: 32768   Required: 121 hours
+Training: 2025-05-09 04:22:27,904-Speed 564.91 samples/sec   Loss 35.9359   LearningRate 0.100000   Epoch: 0   Global Step: 1400   Fp16 Grad Scale: 32768   Required: 120 hours
+Training: 2025-05-09 04:23:58,763-Speed 563.55 samples/sec   Loss 35.6922   LearningRate 0.100000   Epoch: 0   Global Step: 1500   Fp16 Grad Scale: 32768   Required: 120 hours
+Training: 2025-05-09 04:25:29,393-Speed 564.97 samples/sec   Loss 35.4601   LearningRate 0.100000   Epoch: 0   Global Step: 1600   Fp16 Grad Scale: 32768   Required: 120 hours
+Training: 2025-05-09 04:27:00,221-Speed 563.74 samples/sec   Loss 35.1896   LearningRate 0.100000   Epoch: 0   Global Step: 1700   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 04:28:31,108-Speed 563.38 samples/sec   Loss 34.9518   LearningRate 0.100000   Epoch: 0   Global Step: 1800   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 04:30:02,016-Speed 563.25 samples/sec   Loss 34.7062   LearningRate 0.100000   Epoch: 0   Global Step: 1900   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 04:31:32,947-Speed 563.10 samples/sec   Loss 34.4604   LearningRate 0.100000   Epoch: 0   Global Step: 2000   Fp16 Grad Scale: 32768   Required: 118 hours
+testing verification..
+(12000, 512)
+infer time 33.93605500000014
+Training: 2025-05-09 04:32:10,461-[lfw][2000]XNorm: 22.098883
+Training: 2025-05-09 04:32:10,461-[lfw][2000]Accuracy-Flip: 0.80067+-0.01940
+Training: 2025-05-09 04:32:10,461-[lfw][2000]Accuracy-Highest: 0.80067
+Training: 2025-05-09 04:32:10,461-[+][2000]Score / Score-Highest: 0.80067 / 0.69517
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.8006666666666667.pth
+Training: 2025-05-09 04:33:41,749-Speed 397.53 samples/sec   Loss 34.2242   LearningRate 0.100000   Epoch: 0   Global Step: 2100   Fp16 Grad Scale: 32768   Required: 120 hours
+Training: 2025-05-09 04:35:12,564-Speed 563.83 samples/sec   Loss 33.9262   LearningRate 0.100000   Epoch: 0   Global Step: 2200   Fp16 Grad Scale: 32768   Required: 120 hours
+Training: 2025-05-09 04:36:43,401-Speed 563.69 samples/sec   Loss 33.7180   LearningRate 0.100000   Epoch: 0   Global Step: 2300   Fp16 Grad Scale: 32768   Required: 120 hours
+Training: 2025-05-09 04:38:14,182-Speed 564.04 samples/sec   Loss 33.4534   LearningRate 0.100000   Epoch: 0   Global Step: 2400   Fp16 Grad Scale: 32768   Required: 120 hours
+Training: 2025-05-09 04:39:44,850-Speed 564.94 samples/sec   Loss 33.2073   LearningRate 0.100000   Epoch: 0   Global Step: 2500   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 04:41:15,766-Speed 563.30 samples/sec   Loss 32.9711   LearningRate 0.100000   Epoch: 0   Global Step: 2600   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 04:42:46,725-Speed 562.94 samples/sec   Loss 32.7018   LearningRate 0.100000   Epoch: 0   Global Step: 2700   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 04:44:17,714-Speed 562.74 samples/sec   Loss 32.4880   LearningRate 0.100000   Epoch: 0   Global Step: 2800   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 04:45:48,657-Speed 563.03 samples/sec   Loss 32.1669   LearningRate 0.100000   Epoch: 0   Global Step: 2900   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 04:47:19,592-Speed 563.09 samples/sec   Loss 31.9290   LearningRate 0.100000   Epoch: 0   Global Step: 3000   Fp16 Grad Scale: 32768   Required: 118 hours
+testing verification..
+(12000, 512)
+infer time 33.83099599999999
+Training: 2025-05-09 04:47:56,697-[lfw][3000]XNorm: 25.225204
+Training: 2025-05-09 04:47:56,697-[lfw][3000]Accuracy-Flip: 0.87883+-0.01988
+Training: 2025-05-09 04:47:56,697-[lfw][3000]Accuracy-Highest: 0.87883
+Training: 2025-05-09 04:47:56,697-[+][3000]Score / Score-Highest: 0.87883 / 0.80067
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.8788333333333332.pth
+Training: 2025-05-09 04:49:27,710-Speed 399.65 samples/sec   Loss 31.7031   LearningRate 0.100000   Epoch: 0   Global Step: 3100   Fp16 Grad Scale: 32768   Required: 120 hours
+Training: 2025-05-09 04:50:58,389-Speed 564.67 samples/sec   Loss 31.3711   LearningRate 0.100000   Epoch: 0   Global Step: 3200   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 04:52:29,291-Speed 563.27 samples/sec   Loss 31.1946   LearningRate 0.100000   Epoch: 0   Global Step: 3300   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 04:53:59,895-Speed 565.14 samples/sec   Loss 30.8743   LearningRate 0.100000   Epoch: 0   Global Step: 3400   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 04:55:30,589-Speed 564.58 samples/sec   Loss 30.6597   LearningRate 0.100000   Epoch: 0   Global Step: 3500   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 04:57:01,410-Speed 563.79 samples/sec   Loss 30.3820   LearningRate 0.100000   Epoch: 0   Global Step: 3600   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 04:58:32,300-Speed 563.37 samples/sec   Loss 30.0977   LearningRate 0.100000   Epoch: 0   Global Step: 3700   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 05:00:03,239-Speed 563.06 samples/sec   Loss 29.8441   LearningRate 0.100000   Epoch: 0   Global Step: 3800   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:01:34,135-Speed 563.32 samples/sec   Loss 29.5672   LearningRate 0.100000   Epoch: 0   Global Step: 3900   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:03:04,986-Speed 563.60 samples/sec   Loss 29.3664   LearningRate 0.100000   Epoch: 0   Global Step: 4000   Fp16 Grad Scale: 32768   Required: 118 hours
+testing verification..
+(12000, 512)
+infer time 33.939217000000006
+Training: 2025-05-09 05:03:42,530-[lfw][4000]XNorm: 25.220972
+Training: 2025-05-09 05:03:42,530-[lfw][4000]Accuracy-Flip: 0.91717+-0.01625
+Training: 2025-05-09 05:03:42,530-[lfw][4000]Accuracy-Highest: 0.91717
+Training: 2025-05-09 05:03:42,530-[+][4000]Score / Score-Highest: 0.91717 / 0.87883
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.9171666666666667.pth
+Training: 2025-05-09 05:05:13,483-Speed 398.47 samples/sec   Loss 29.0412   LearningRate 0.100000   Epoch: 0   Global Step: 4100   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 05:06:44,269-Speed 564.00 samples/sec   Loss 28.8455   LearningRate 0.100000   Epoch: 0   Global Step: 4200   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 05:08:14,815-Speed 565.51 samples/sec   Loss 28.5137   LearningRate 0.100000   Epoch: 0   Global Step: 4300   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 05:09:45,456-Speed 564.92 samples/sec   Loss 28.2812   LearningRate 0.100000   Epoch: 0   Global Step: 4400   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 05:11:16,243-Speed 564.00 samples/sec   Loss 28.0145   LearningRate 0.100000   Epoch: 0   Global Step: 4500   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 05:12:47,023-Speed 564.05 samples/sec   Loss 27.7266   LearningRate 0.100000   Epoch: 0   Global Step: 4600   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:14:17,811-Speed 564.00 samples/sec   Loss 27.4706   LearningRate 0.100000   Epoch: 0   Global Step: 4700   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:15:48,635-Speed 563.78 samples/sec   Loss 27.2969   LearningRate 0.100000   Epoch: 0   Global Step: 4800   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:17:19,307-Speed 564.70 samples/sec   Loss 27.0361   LearningRate 0.100000   Epoch: 0   Global Step: 4900   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:18:49,862-Speed 565.46 samples/sec   Loss 26.7409   LearningRate 0.100000   Epoch: 0   Global Step: 5000   Fp16 Grad Scale: 32768   Required: 118 hours
+testing verification..
+(12000, 512)
+infer time 34.028876999999994
+Training: 2025-05-09 05:19:27,457-[lfw][5000]XNorm: 24.486676
+Training: 2025-05-09 05:19:27,457-[lfw][5000]Accuracy-Flip: 0.94383+-0.01726
+Training: 2025-05-09 05:19:27,457-[lfw][5000]Accuracy-Highest: 0.94383
+Training: 2025-05-09 05:19:27,457-[+][5000]Score / Score-Highest: 0.94383 / 0.91717
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.9438333333333334.pth
+Training: 2025-05-09 05:19:28,225-Pytorch Model Saved in '/kaggle/working/output/backbone.pth'
+Training: 2025-05-09 05:20:59,582-Speed 394.72 samples/sec   Loss 26.5023   LearningRate 0.100000   Epoch: 0   Global Step: 5100   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 05:22:30,304-Speed 564.40 samples/sec   Loss 26.2961   LearningRate 0.100000   Epoch: 0   Global Step: 5200   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 05:24:00,912-Speed 565.12 samples/sec   Loss 26.0973   LearningRate 0.100000   Epoch: 0   Global Step: 5300   Fp16 Grad Scale: 32768   Required: 119 hours
+Training: 2025-05-09 05:25:31,603-Speed 564.59 samples/sec   Loss 25.8363   LearningRate 0.100000   Epoch: 0   Global Step: 5400   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:27:01,991-Speed 566.48 samples/sec   Loss 25.5392   LearningRate 0.100000   Epoch: 0   Global Step: 5500   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:28:32,520-Speed 565.61 samples/sec   Loss 25.4188   LearningRate 0.100000   Epoch: 0   Global Step: 5600   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:30:03,256-Speed 564.32 samples/sec   Loss 25.1646   LearningRate 0.100000   Epoch: 0   Global Step: 5700   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:31:33,734-Speed 565.92 samples/sec   Loss 24.9156   LearningRate 0.100000   Epoch: 0   Global Step: 5800   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:33:04,276-Speed 565.53 samples/sec   Loss 24.6987   LearningRate 0.100000   Epoch: 0   Global Step: 5900   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:34:34,962-Speed 564.62 samples/sec   Loss 24.5057   LearningRate 0.100000   Epoch: 0   Global Step: 6000   Fp16 Grad Scale: 32768   Required: 118 hours
+testing verification..
+(12000, 512)
+infer time 33.98199599999999
+Training: 2025-05-09 05:35:12,197-[lfw][6000]XNorm: 24.459690
+Training: 2025-05-09 05:35:12,197-[lfw][6000]Accuracy-Flip: 0.94983+-0.01315
+Training: 2025-05-09 05:35:12,197-[lfw][6000]Accuracy-Highest: 0.94983
+Training: 2025-05-09 05:35:12,197-[+][6000]Score / Score-Highest: 0.94983 / 0.94383
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.9498333333333333.pth
+Training: 2025-05-09 05:36:42,992-Speed 399.93 samples/sec   Loss 24.3788   LearningRate 0.100000   Epoch: 0   Global Step: 6100   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:38:13,558-Speed 565.38 samples/sec   Loss 24.1054   LearningRate 0.100000   Epoch: 0   Global Step: 6200   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:39:44,191-Speed 564.95 samples/sec   Loss 23.8821   LearningRate 0.100000   Epoch: 0   Global Step: 6300   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:41:14,943-Speed 564.37 samples/sec   Loss 23.6622   LearningRate 0.100000   Epoch: 0   Global Step: 6400   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:42:45,355-Speed 566.34 samples/sec   Loss 23.4476   LearningRate 0.100000   Epoch: 0   Global Step: 6500   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:44:15,597-Speed 567.41 samples/sec   Loss 23.2695   LearningRate 0.100000   Epoch: 0   Global Step: 6600   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:45:46,060-Speed 566.02 samples/sec   Loss 23.0960   LearningRate 0.100000   Epoch: 0   Global Step: 6700   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:47:16,454-Speed 566.46 samples/sec   Loss 22.9065   LearningRate 0.100000   Epoch: 0   Global Step: 6800   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:48:46,755-Speed 567.04 samples/sec   Loss 22.6673   LearningRate 0.100000   Epoch: 0   Global Step: 6900   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:50:17,408-Speed 564.84 samples/sec   Loss 22.5511   LearningRate 0.100000   Epoch: 0   Global Step: 7000   Fp16 Grad Scale: 32768   Required: 117 hours
+testing verification..
+(12000, 512)
+infer time 34.01285499999999
+Training: 2025-05-09 05:50:54,984-[lfw][7000]XNorm: 24.167386
+Training: 2025-05-09 05:50:54,984-[lfw][7000]Accuracy-Flip: 0.95650+-0.00979
+Training: 2025-05-09 05:50:54,984-[lfw][7000]Accuracy-Highest: 0.95650
+Training: 2025-05-09 05:50:54,984-[+][7000]Score / Score-Highest: 0.95650 / 0.94983
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.9565000000000001.pth
+Training: 2025-05-09 05:52:25,773-Speed 398.88 samples/sec   Loss 22.4236   LearningRate 0.100000   Epoch: 0   Global Step: 7100   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:53:56,277-Speed 565.77 samples/sec   Loss 22.1995   LearningRate 0.100000   Epoch: 0   Global Step: 7200   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:55:26,786-Speed 566.03 samples/sec   Loss 22.0595   LearningRate 0.100000   Epoch: 0   Global Step: 7300   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:56:57,357-Speed 565.34 samples/sec   Loss 21.8623   LearningRate 0.100000   Epoch: 0   Global Step: 7400   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:58:27,642-Speed 567.14 samples/sec   Loss 21.7385   LearningRate 0.100000   Epoch: 0   Global Step: 7500   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 05:59:58,311-Speed 564.73 samples/sec   Loss 21.5577   LearningRate 0.100000   Epoch: 0   Global Step: 7600   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 06:01:28,659-Speed 566.74 samples/sec   Loss 21.3551   LearningRate 0.100000   Epoch: 0   Global Step: 7700   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:02:59,149-Speed 565.85 samples/sec   Loss 21.2630   LearningRate 0.100000   Epoch: 0   Global Step: 7800   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:04:29,804-Speed 564.82 samples/sec   Loss 21.1032   LearningRate 0.100000   Epoch: 0   Global Step: 7900   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:06:00,160-Speed 566.69 samples/sec   Loss 21.0268   LearningRate 0.100000   Epoch: 0   Global Step: 8000   Fp16 Grad Scale: 32768   Required: 117 hours
+testing verification..
+(12000, 512)
+infer time 33.889397
+Training: 2025-05-09 06:06:37,545-[lfw][8000]XNorm: 24.383230
+Training: 2025-05-09 06:06:37,545-[lfw][8000]Accuracy-Flip: 0.96250+-0.00625
+Training: 2025-05-09 06:06:37,545-[lfw][8000]Accuracy-Highest: 0.96250
+Training: 2025-05-09 06:06:37,545-[+][8000]Score / Score-Highest: 0.96250 / 0.95650
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.9625.pth
+Training: 2025-05-09 06:08:08,300-Speed 399.59 samples/sec   Loss 20.7957   LearningRate 0.100000   Epoch: 0   Global Step: 8100   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 06:09:38,719-Speed 566.30 samples/sec   Loss 20.6359   LearningRate 0.100000   Epoch: 0   Global Step: 8200   Fp16 Grad Scale: 32768   Required: 118 hours
+Training: 2025-05-09 06:11:08,961-Speed 567.41 samples/sec   Loss 20.5966   LearningRate 0.100000   Epoch: 0   Global Step: 8300   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:12:39,499-Speed 565.55 samples/sec   Loss 20.4010   LearningRate 0.100000   Epoch: 0   Global Step: 8400   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:14:09,777-Speed 567.18 samples/sec   Loss 20.3038   LearningRate 0.100000   Epoch: 0   Global Step: 8500   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:15:40,362-Speed 565.26 samples/sec   Loss 20.1969   LearningRate 0.100000   Epoch: 0   Global Step: 8600   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:17:10,808-Speed 566.13 samples/sec   Loss 20.0469   LearningRate 0.100000   Epoch: 0   Global Step: 8700   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:18:41,252-Speed 566.18 samples/sec   Loss 20.0126   LearningRate 0.100000   Epoch: 0   Global Step: 8800   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:20:11,657-Speed 566.47 samples/sec   Loss 19.8034   LearningRate 0.100000   Epoch: 0   Global Step: 8900   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:21:42,225-Speed 565.37 samples/sec   Loss 19.6090   LearningRate 0.100000   Epoch: 0   Global Step: 9000   Fp16 Grad Scale: 32768   Required: 117 hours
+testing verification..
+(12000, 512)
+infer time 33.920756999999966
+Training: 2025-05-09 06:22:19,859-[lfw][9000]XNorm: 25.385034
+Training: 2025-05-09 06:22:19,859-[lfw][9000]Accuracy-Flip: 0.96633+-0.00745
+Training: 2025-05-09 06:22:19,859-[lfw][9000]Accuracy-Highest: 0.96633
+Training: 2025-05-09 06:22:19,859-[+][9000]Score / Score-Highest: 0.96633 / 0.96250
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.9663333333333334.pth
+Training: 2025-05-09 06:23:50,593-Speed 398.88 samples/sec   Loss 19.6017   LearningRate 0.100000   Epoch: 0   Global Step: 9100   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:25:21,043-Speed 566.10 samples/sec   Loss 19.4839   LearningRate 0.100000   Epoch: 0   Global Step: 9200   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:26:51,642-Speed 565.17 samples/sec   Loss 19.3913   LearningRate 0.100000   Epoch: 0   Global Step: 9300   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:28:22,228-Speed 565.25 samples/sec   Loss 19.3041   LearningRate 0.100000   Epoch: 0   Global Step: 9400   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:29:52,819-Speed 565.22 samples/sec   Loss 19.1828   LearningRate 0.100000   Epoch: 0   Global Step: 9500   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:31:23,398-Speed 565.30 samples/sec   Loss 19.1777   LearningRate 0.100000   Epoch: 0   Global Step: 9600   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:32:53,924-Speed 565.63 samples/sec   Loss 18.9406   LearningRate 0.100000   Epoch: 0   Global Step: 9700   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:34:24,316-Speed 566.46 samples/sec   Loss 18.8628   LearningRate 0.100000   Epoch: 0   Global Step: 9800   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:35:54,556-Speed 567.42 samples/sec   Loss 18.9323   LearningRate 0.100000   Epoch: 0   Global Step: 9900   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:37:25,016-Speed 566.05 samples/sec   Loss 18.7167   LearningRate 0.100000   Epoch: 0   Global Step: 10000   Fp16 Grad Scale: 32768   Required: 117 hours
+testing verification..
+(12000, 512)
+infer time 33.79848499999999
+Training: 2025-05-09 06:38:02,547-[lfw][10000]XNorm: 23.461508
+Training: 2025-05-09 06:38:02,547-[lfw][10000]Accuracy-Flip: 0.96683+-0.00794
+Training: 2025-05-09 06:38:02,548-[lfw][10000]Accuracy-Highest: 0.96683
+Training: 2025-05-09 06:38:02,548-[+][10000]Score / Score-Highest: 0.96683 / 0.96633
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.9668333333333333.pth
+Training: 2025-05-09 06:38:03,461-Pytorch Model Saved in '/kaggle/working/output/backbone.pth'
+Training: 2025-05-09 06:39:34,707-Speed 394.80 samples/sec   Loss 18.6030   LearningRate 0.100000   Epoch: 0   Global Step: 10100   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:41:05,027-Speed 566.92 samples/sec   Loss 18.5014   LearningRate 0.100000   Epoch: 0   Global Step: 10200   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:42:35,602-Speed 565.37 samples/sec   Loss 18.4312   LearningRate 0.100000   Epoch: 0   Global Step: 10300   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:44:05,805-Speed 567.65 samples/sec   Loss 18.4076   LearningRate 0.100000   Epoch: 0   Global Step: 10400   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:45:36,091-Speed 567.13 samples/sec   Loss 18.3078   LearningRate 0.100000   Epoch: 0   Global Step: 10500   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:47:06,508-Speed 566.30 samples/sec   Loss 18.2577   LearningRate 0.100000   Epoch: 0   Global Step: 10600   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:48:36,931-Speed 566.27 samples/sec   Loss 18.2462   LearningRate 0.100000   Epoch: 0   Global Step: 10700   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:50:07,418-Speed 565.88 samples/sec   Loss 18.1046   LearningRate 0.100000   Epoch: 0   Global Step: 10800   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 06:51:37,928-Speed 565.72 samples/sec   Loss 17.9787   LearningRate 0.100000   Epoch: 0   Global Step: 10900   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 06:53:08,438-Speed 565.73 samples/sec   Loss 17.9429   LearningRate 0.100000   Epoch: 0   Global Step: 11000   Fp16 Grad Scale: 32768   Required: 116 hours
+testing verification..
+(12000, 512)
+infer time 33.98501300000007
+Training: 2025-05-09 06:53:46,679-[lfw][11000]XNorm: 24.583297
+Training: 2025-05-09 06:53:46,679-[lfw][11000]Accuracy-Flip: 0.96467+-0.00572
+Training: 2025-05-09 06:53:46,679-[lfw][11000]Accuracy-Highest: 0.96683
+Training: 2025-05-09 06:53:46,679-[+][11000]Score / Score-Highest: 0.96467 / 0.96683
+Training: 2025-05-09 06:55:16,982-Speed 398.33 samples/sec   Loss 17.8952   LearningRate 0.100000   Epoch: 0   Global Step: 11100   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:56:47,513-Speed 565.60 samples/sec   Loss 17.7586   LearningRate 0.100000   Epoch: 0   Global Step: 11200   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 06:58:17,806-Speed 567.08 samples/sec   Loss 17.6472   LearningRate 0.100000   Epoch: 0   Global Step: 11300   Fp16 Grad Scale: 32768   Required: 117 hours
+/usr/local/lib/python3.11/dist-packages/torch/utils/data/dataloader.py:617: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+Training: 2025-05-09 07:00:31,069-Speed 384.22 samples/sec   Loss 17.4578   LearningRate 0.100000   Epoch: 1   Global Step: 11400   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 07:02:01,723-Speed 564.82 samples/sec   Loss 16.8422   LearningRate 0.100000   Epoch: 1   Global Step: 11500   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 07:03:32,024-Speed 567.04 samples/sec   Loss 16.7504   LearningRate 0.100000   Epoch: 1   Global Step: 11600   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 07:05:02,109-Speed 568.39 samples/sec   Loss 16.7761   LearningRate 0.100000   Epoch: 1   Global Step: 11700   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 07:06:32,425-Speed 566.94 samples/sec   Loss 16.7310   LearningRate 0.100000   Epoch: 1   Global Step: 11800   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 07:08:02,683-Speed 567.31 samples/sec   Loss 16.7510   LearningRate 0.100000   Epoch: 1   Global Step: 11900   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 07:09:32,840-Speed 567.93 samples/sec   Loss 16.6506   LearningRate 0.100000   Epoch: 1   Global Step: 12000   Fp16 Grad Scale: 32768   Required: 116 hours
+testing verification..
+(12000, 512)
+infer time 33.93541900000004
+Training: 2025-05-09 07:10:09,919-[lfw][12000]XNorm: 26.256611
+Training: 2025-05-09 07:10:09,919-[lfw][12000]Accuracy-Flip: 0.96050+-0.00707
+Training: 2025-05-09 07:10:09,919-[lfw][12000]Accuracy-Highest: 0.96683
+Training: 2025-05-09 07:10:09,919-[+][12000]Score / Score-Highest: 0.96050 / 0.96683
+Training: 2025-05-09 07:11:40,104-Speed 402.34 samples/sec   Loss 16.6806   LearningRate 0.100000   Epoch: 1   Global Step: 12100   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 07:13:10,459-Speed 566.69 samples/sec   Loss 16.5792   LearningRate 0.100000   Epoch: 1   Global Step: 12200   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 07:14:40,648-Speed 567.74 samples/sec   Loss 16.7059   LearningRate 0.100000   Epoch: 1   Global Step: 12300   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 07:16:10,761-Speed 568.21 samples/sec   Loss 16.5951   LearningRate 0.100000   Epoch: 1   Global Step: 12400   Fp16 Grad Scale: 32768   Required: 117 hours
+Training: 2025-05-09 07:17:40,870-Speed 568.59 samples/sec   Loss 16.5375   LearningRate 0.100000   Epoch: 1   Global Step: 12500   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:19:11,016-Speed 568.01 samples/sec   Loss 16.4979   LearningRate 0.100000   Epoch: 1   Global Step: 12600   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:20:41,109-Speed 568.34 samples/sec   Loss 16.4470   LearningRate 0.100000   Epoch: 1   Global Step: 12700   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:22:11,173-Speed 568.53 samples/sec   Loss 16.5029   LearningRate 0.100000   Epoch: 1   Global Step: 12800   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:23:41,203-Speed 568.75 samples/sec   Loss 16.4194   LearningRate 0.100000   Epoch: 1   Global Step: 12900   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:25:11,270-Speed 568.60 samples/sec   Loss 16.3162   LearningRate 0.100000   Epoch: 1   Global Step: 13000   Fp16 Grad Scale: 32768   Required: 116 hours
+testing verification..
+(12000, 512)
+infer time 33.887302999999996
+Training: 2025-05-09 07:25:48,154-[lfw][13000]XNorm: 24.571466
+Training: 2025-05-09 07:25:48,154-[lfw][13000]Accuracy-Flip: 0.96717+-0.00742
+Training: 2025-05-09 07:25:48,154-[lfw][13000]Accuracy-Highest: 0.96717
+Training: 2025-05-09 07:25:48,154-[+][13000]Score / Score-Highest: 0.96717 / 0.96683
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.9671666666666667.pth
+Training: 2025-05-09 07:27:18,738-Speed 401.69 samples/sec   Loss 16.3165   LearningRate 0.100000   Epoch: 1   Global Step: 13100   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:28:49,013-Speed 567.23 samples/sec   Loss 16.3400   LearningRate 0.100000   Epoch: 1   Global Step: 13200   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:30:19,232-Speed 567.55 samples/sec   Loss 16.2384   LearningRate 0.100000   Epoch: 1   Global Step: 13300   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:31:49,352-Speed 568.39 samples/sec   Loss 16.2835   LearningRate 0.100000   Epoch: 1   Global Step: 13400   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:33:19,491-Speed 568.05 samples/sec   Loss 16.1485   LearningRate 0.100000   Epoch: 1   Global Step: 13500   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:34:49,809-Speed 566.94 samples/sec   Loss 16.1527   LearningRate 0.100000   Epoch: 1   Global Step: 13600   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:36:20,193-Speed 566.52 samples/sec   Loss 16.1352   LearningRate 0.100000   Epoch: 1   Global Step: 13700   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:37:50,446-Speed 567.48 samples/sec   Loss 16.1606   LearningRate 0.100000   Epoch: 1   Global Step: 13800   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:39:20,704-Speed 567.30 samples/sec   Loss 16.0304   LearningRate 0.100000   Epoch: 1   Global Step: 13900   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:40:50,965-Speed 567.29 samples/sec   Loss 16.0218   LearningRate 0.100000   Epoch: 1   Global Step: 14000   Fp16 Grad Scale: 32768   Required: 116 hours
+testing verification..
+(12000, 512)
+infer time 33.89593599999999
+Training: 2025-05-09 07:41:27,957-[lfw][14000]XNorm: 23.069336
+Training: 2025-05-09 07:41:27,957-[lfw][14000]Accuracy-Flip: 0.97150+-0.00821
+Training: 2025-05-09 07:41:27,957-[lfw][14000]Accuracy-Highest: 0.97150
+Training: 2025-05-09 07:41:27,957-[+][14000]Score / Score-Highest: 0.97150 / 0.96717
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.9715.pth
+Training: 2025-05-09 07:42:58,503-Speed 401.47 samples/sec   Loss 16.0291   LearningRate 0.100000   Epoch: 1   Global Step: 14100   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:44:28,700-Speed 567.69 samples/sec   Loss 15.9512   LearningRate 0.100000   Epoch: 1   Global Step: 14200   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:45:59,010-Speed 566.98 samples/sec   Loss 16.0306   LearningRate 0.100000   Epoch: 1   Global Step: 14300   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:47:29,148-Speed 568.42 samples/sec   Loss 15.9680   LearningRate 0.100000   Epoch: 1   Global Step: 14400   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:48:59,160-Speed 568.86 samples/sec   Loss 15.8447   LearningRate 0.100000   Epoch: 1   Global Step: 14500   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:50:29,174-Speed 568.84 samples/sec   Loss 15.7736   LearningRate 0.100000   Epoch: 1   Global Step: 14600   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:51:59,230-Speed 568.58 samples/sec   Loss 15.7685   LearningRate 0.100000   Epoch: 1   Global Step: 14700   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:53:29,322-Speed 568.34 samples/sec   Loss 15.7616   LearningRate 0.100000   Epoch: 1   Global Step: 14800   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:54:59,372-Speed 568.62 samples/sec   Loss 15.7207   LearningRate 0.100000   Epoch: 1   Global Step: 14900   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 07:56:29,455-Speed 568.41 samples/sec   Loss 15.7509   LearningRate 0.100000   Epoch: 1   Global Step: 15000   Fp16 Grad Scale: 32768   Required: 115 hours
+testing verification..
+(12000, 512)
+infer time 33.91892200000001
+Training: 2025-05-09 07:57:06,457-[lfw][15000]XNorm: 20.512826
+Training: 2025-05-09 07:57:06,458-[lfw][15000]Accuracy-Flip: 0.93550+-0.00910
+Training: 2025-05-09 07:57:06,458-[lfw][15000]Accuracy-Highest: 0.97150
+Training: 2025-05-09 07:57:06,458-[+][15000]Score / Score-Highest: 0.93550 / 0.97150
+Training: 2025-05-09 07:57:07,044-Pytorch Model Saved in '/kaggle/working/output/backbone.pth'
+Training: 2025-05-09 07:58:37,933-Speed 398.53 samples/sec   Loss 15.6657   LearningRate 0.100000   Epoch: 1   Global Step: 15100   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 08:00:08,295-Speed 566.86 samples/sec   Loss 15.6545   LearningRate 0.100000   Epoch: 1   Global Step: 15200   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 08:01:38,419-Speed 568.15 samples/sec   Loss 15.6342   LearningRate 0.100000   Epoch: 1   Global Step: 15300   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 08:03:08,489-Speed 568.50 samples/sec   Loss 15.5721   LearningRate 0.100000   Epoch: 1   Global Step: 15400   Fp16 Grad Scale: 32768   Required: 116 hours
+Training: 2025-05-09 08:04:38,744-Speed 567.32 samples/sec   Loss 15.5884   LearningRate 0.100000   Epoch: 1   Global Step: 15500   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:06:08,795-Speed 568.62 samples/sec   Loss 15.5831   LearningRate 0.100000   Epoch: 1   Global Step: 15600   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:07:39,064-Speed 567.23 samples/sec   Loss 15.5773   LearningRate 0.100000   Epoch: 1   Global Step: 15700   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:09:09,246-Speed 567.78 samples/sec   Loss 15.4906   LearningRate 0.100000   Epoch: 1   Global Step: 15800   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:10:39,228-Speed 569.05 samples/sec   Loss 15.4206   LearningRate 0.100000   Epoch: 1   Global Step: 15900   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:12:09,214-Speed 569.26 samples/sec   Loss 15.4610   LearningRate 0.100000   Epoch: 1   Global Step: 16000   Fp16 Grad Scale: 32768   Required: 115 hours
+testing verification..
+(12000, 512)
+infer time 34.06560300000012
+Training: 2025-05-09 08:12:46,363-[lfw][16000]XNorm: 25.151443
+Training: 2025-05-09 08:12:46,364-[lfw][16000]Accuracy-Flip: 0.97300+-0.00690
+Training: 2025-05-09 08:12:46,365-[lfw][16000]Accuracy-Highest: 0.97300
+Training: 2025-05-09 08:12:46,365-[+][16000]Score / Score-Highest: 0.97300 / 0.97150
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.9730000000000001.pth
+Training: 2025-05-09 08:14:16,867-Speed 401.11 samples/sec   Loss 15.4270   LearningRate 0.100000   Epoch: 1   Global Step: 16100   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:15:47,041-Speed 567.83 samples/sec   Loss 15.4520   LearningRate 0.100000   Epoch: 1   Global Step: 16200   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:17:17,208-Speed 568.02 samples/sec   Loss 15.4524   LearningRate 0.100000   Epoch: 1   Global Step: 16300   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:18:47,151-Speed 569.30 samples/sec   Loss 15.3288   LearningRate 0.100000   Epoch: 1   Global Step: 16400   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:20:17,242-Speed 568.44 samples/sec   Loss 15.2258   LearningRate 0.100000   Epoch: 1   Global Step: 16500   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:21:47,359-Speed 568.20 samples/sec   Loss 15.2853   LearningRate 0.100000   Epoch: 1   Global Step: 16600   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:23:17,440-Speed 568.46 samples/sec   Loss 15.2267   LearningRate 0.100000   Epoch: 1   Global Step: 16700   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:24:47,823-Speed 566.52 samples/sec   Loss 15.1935   LearningRate 0.100000   Epoch: 1   Global Step: 16800   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:26:18,076-Speed 567.60 samples/sec   Loss 15.2078   LearningRate 0.100000   Epoch: 1   Global Step: 16900   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:27:48,013-Speed 569.33 samples/sec   Loss 15.2194   LearningRate 0.100000   Epoch: 1   Global Step: 17000   Fp16 Grad Scale: 32768   Required: 115 hours
+testing verification..
+(12000, 512)
+infer time 33.82690099999996
+Training: 2025-05-09 08:28:24,863-[lfw][17000]XNorm: 24.435074
+Training: 2025-05-09 08:28:24,864-[lfw][17000]Accuracy-Flip: 0.97500+-0.00699
+Training: 2025-05-09 08:28:24,864-[lfw][17000]Accuracy-Highest: 0.97500
+Training: 2025-05-09 08:28:24,864-[+][17000]Score / Score-Highest: 0.97500 / 0.97300
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.9750000000000002.pth
+Training: 2025-05-09 08:29:55,325-Speed 402.19 samples/sec   Loss 15.1174   LearningRate 0.100000   Epoch: 1   Global Step: 17100   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:31:25,473-Speed 568.27 samples/sec   Loss 15.1636   LearningRate 0.100000   Epoch: 1   Global Step: 17200   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:32:55,694-Speed 567.54 samples/sec   Loss 15.1816   LearningRate 0.100000   Epoch: 1   Global Step: 17300   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:34:25,989-Speed 567.08 samples/sec   Loss 15.0106   LearningRate 0.100000   Epoch: 1   Global Step: 17400   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:35:55,979-Speed 568.99 samples/sec   Loss 15.0185   LearningRate 0.100000   Epoch: 1   Global Step: 17500   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:37:25,960-Speed 569.05 samples/sec   Loss 15.0089   LearningRate 0.100000   Epoch: 1   Global Step: 17600   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:38:56,017-Speed 568.57 samples/sec   Loss 14.9676   LearningRate 0.100000   Epoch: 1   Global Step: 17700   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:40:26,086-Speed 568.50 samples/sec   Loss 14.9277   LearningRate 0.100000   Epoch: 1   Global Step: 17800   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:41:56,112-Speed 568.77 samples/sec   Loss 14.8808   LearningRate 0.100000   Epoch: 1   Global Step: 17900   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:43:26,091-Speed 569.07 samples/sec   Loss 14.8975   LearningRate 0.100000   Epoch: 1   Global Step: 18000   Fp16 Grad Scale: 32768   Required: 115 hours
+testing verification..
+(12000, 512)
+infer time 33.94419100000002
+Training: 2025-05-09 08:44:03,111-[lfw][18000]XNorm: 26.266893
+Training: 2025-05-09 08:44:03,111-[lfw][18000]Accuracy-Flip: 0.97600+-0.00633
+Training: 2025-05-09 08:44:03,111-[lfw][18000]Accuracy-Highest: 0.97600
+Training: 2025-05-09 08:44:03,111-[+][18000]Score / Score-Highest: 0.97600 / 0.97500
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.976.pth
+Training: 2025-05-09 08:45:33,541-Speed 401.74 samples/sec   Loss 14.8352   LearningRate 0.100000   Epoch: 1   Global Step: 18100   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:47:03,719-Speed 567.81 samples/sec   Loss 14.9152   LearningRate 0.100000   Epoch: 1   Global Step: 18200   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:48:33,632-Speed 569.48 samples/sec   Loss 14.8615   LearningRate 0.100000   Epoch: 1   Global Step: 18300   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:50:03,530-Speed 569.57 samples/sec   Loss 14.8562   LearningRate 0.100000   Epoch: 1   Global Step: 18400   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:51:33,488-Speed 569.20 samples/sec   Loss 14.8056   LearningRate 0.100000   Epoch: 1   Global Step: 18500   Fp16 Grad Scale: 32768   Required: 115 hours
+Training: 2025-05-09 08:53:03,494-Speed 568.89 samples/sec   Loss 14.8930   LearningRate 0.100000   Epoch: 1   Global Step: 18600   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 08:54:33,484-Speed 568.99 samples/sec   Loss 14.8847   LearningRate 0.100000   Epoch: 1   Global Step: 18700   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 08:56:03,478-Speed 568.96 samples/sec   Loss 14.7349   LearningRate 0.100000   Epoch: 1   Global Step: 18800   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 08:57:33,471-Speed 568.98 samples/sec   Loss 14.7272   LearningRate 0.100000   Epoch: 1   Global Step: 18900   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 08:59:03,491-Speed 568.80 samples/sec   Loss 14.7449   LearningRate 0.100000   Epoch: 1   Global Step: 19000   Fp16 Grad Scale: 32768   Required: 114 hours
+testing verification..
+(12000, 512)
+infer time 33.793994
+Training: 2025-05-09 08:59:40,386-[lfw][19000]XNorm: 25.083753
+Training: 2025-05-09 08:59:40,386-[lfw][19000]Accuracy-Flip: 0.97783+-0.00592
+Training: 2025-05-09 08:59:40,386-[lfw][19000]Accuracy-Highest: 0.97783
+Training: 2025-05-09 08:59:40,386-[+][19000]Score / Score-Highest: 0.97783 / 0.97600
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.9778333333333334.pth
+Training: 2025-05-09 09:01:10,704-Speed 402.50 samples/sec   Loss 14.7293   LearningRate 0.100000   Epoch: 1   Global Step: 19100   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:02:40,799-Speed 568.40 samples/sec   Loss 14.6899   LearningRate 0.100000   Epoch: 1   Global Step: 19200   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:04:10,922-Speed 568.15 samples/sec   Loss 14.7021   LearningRate 0.100000   Epoch: 1   Global Step: 19300   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:05:40,942-Speed 568.81 samples/sec   Loss 14.6671   LearningRate 0.100000   Epoch: 1   Global Step: 19400   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:07:10,878-Speed 569.33 samples/sec   Loss 14.5868   LearningRate 0.100000   Epoch: 1   Global Step: 19500   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:08:40,878-Speed 569.16 samples/sec   Loss 14.6356   LearningRate 0.100000   Epoch: 1   Global Step: 19600   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:10:10,910-Speed 568.72 samples/sec   Loss 14.5857   LearningRate 0.100000   Epoch: 1   Global Step: 19700   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:11:40,949-Speed 568.70 samples/sec   Loss 14.4856   LearningRate 0.100000   Epoch: 1   Global Step: 19800   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:13:11,031-Speed 568.41 samples/sec   Loss 14.5281   LearningRate 0.100000   Epoch: 1   Global Step: 19900   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:14:41,069-Speed 568.91 samples/sec   Loss 14.5804   LearningRate 0.100000   Epoch: 1   Global Step: 20000   Fp16 Grad Scale: 32768   Required: 114 hours
+testing verification..
+(12000, 512)
+infer time 33.74999000000001
+Training: 2025-05-09 09:15:17,888-[lfw][20000]XNorm: 23.863372
+Training: 2025-05-09 09:15:17,888-[lfw][20000]Accuracy-Flip: 0.97700+-0.00645
+Training: 2025-05-09 09:15:17,888-[lfw][20000]Accuracy-Highest: 0.97783
+Training: 2025-05-09 09:15:17,888-[+][20000]Score / Score-Highest: 0.97700 / 0.97783
+Training: 2025-05-09 09:15:18,422-Pytorch Model Saved in '/kaggle/working/output/backbone.pth'
+Training: 2025-05-09 09:16:49,192-Speed 399.63 samples/sec   Loss 14.4854   LearningRate 0.100000   Epoch: 1   Global Step: 20100   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:18:19,340-Speed 568.00 samples/sec   Loss 14.5307   LearningRate 0.100000   Epoch: 1   Global Step: 20200   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:19:49,278-Speed 569.32 samples/sec   Loss 14.4982   LearningRate 0.100000   Epoch: 1   Global Step: 20300   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:21:19,136-Speed 570.08 samples/sec   Loss 14.4749   LearningRate 0.100000   Epoch: 1   Global Step: 20400   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:22:48,973-Speed 569.96 samples/sec   Loss 14.3624   LearningRate 0.100000   Epoch: 1   Global Step: 20500   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:24:18,825-Speed 570.13 samples/sec   Loss 14.3435   LearningRate 0.100000   Epoch: 1   Global Step: 20600   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:25:48,714-Speed 569.63 samples/sec   Loss 14.4143   LearningRate 0.100000   Epoch: 1   Global Step: 20700   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:27:18,697-Speed 569.05 samples/sec   Loss 14.5449   LearningRate 0.100000   Epoch: 1   Global Step: 20800   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:28:48,610-Speed 569.48 samples/sec   Loss 14.3999   LearningRate 0.100000   Epoch: 1   Global Step: 20900   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:30:18,537-Speed 569.43 samples/sec   Loss 14.4206   LearningRate 0.100000   Epoch: 1   Global Step: 21000   Fp16 Grad Scale: 32768   Required: 114 hours
+testing verification..
+(12000, 512)
+infer time 33.71412499999996
+Training: 2025-05-09 09:30:55,231-[lfw][21000]XNorm: 25.310177
+Training: 2025-05-09 09:30:55,231-[lfw][21000]Accuracy-Flip: 0.97267+-0.00772
+Training: 2025-05-09 09:30:55,231-[lfw][21000]Accuracy-Highest: 0.97783
+Training: 2025-05-09 09:30:55,231-[+][21000]Score / Score-Highest: 0.97267 / 0.97783
+Training: 2025-05-09 09:32:25,363-Speed 403.73 samples/sec   Loss 14.3037   LearningRate 0.100000   Epoch: 1   Global Step: 21100   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:33:55,392-Speed 569.08 samples/sec   Loss 14.2279   LearningRate 0.100000   Epoch: 1   Global Step: 21200   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:35:25,508-Speed 568.20 samples/sec   Loss 14.3188   LearningRate 0.100000   Epoch: 1   Global Step: 21300   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:36:55,325-Speed 570.13 samples/sec   Loss 14.3908   LearningRate 0.100000   Epoch: 1   Global Step: 21400   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:38:25,198-Speed 569.74 samples/sec   Loss 14.2873   LearningRate 0.100000   Epoch: 1   Global Step: 21500   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:39:55,150-Speed 569.35 samples/sec   Loss 14.2249   LearningRate 0.100000   Epoch: 1   Global Step: 21600   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:41:25,215-Speed 568.52 samples/sec   Loss 14.1785   LearningRate 0.100000   Epoch: 1   Global Step: 21700   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:42:55,321-Speed 568.27 samples/sec   Loss 14.3271   LearningRate 0.100000   Epoch: 1   Global Step: 21800   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 09:44:25,333-Speed 568.85 samples/sec   Loss 14.3126   LearningRate 0.100000   Epoch: 1   Global Step: 21900   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 09:45:55,337-Speed 569.11 samples/sec   Loss 14.2893   LearningRate 0.100000   Epoch: 1   Global Step: 22000   Fp16 Grad Scale: 32768   Required: 113 hours
+testing verification..
+(12000, 512)
+infer time 33.87291799999997
+Training: 2025-05-09 09:46:32,735-[lfw][22000]XNorm: 24.898061
+Training: 2025-05-09 09:46:32,735-[lfw][22000]Accuracy-Flip: 0.97400+-0.00569
+Training: 2025-05-09 09:46:32,735-[lfw][22000]Accuracy-Highest: 0.97783
+Training: 2025-05-09 09:46:32,735-[+][22000]Score / Score-Highest: 0.97400 / 0.97783
+Training: 2025-05-09 09:48:02,785-Speed 401.75 samples/sec   Loss 14.1961   LearningRate 0.100000   Epoch: 1   Global Step: 22100   Fp16 Grad Scale: 32768   Required: 114 hours
+Training: 2025-05-09 09:49:32,827-Speed 568.67 samples/sec   Loss 14.1370   LearningRate 0.100000   Epoch: 1   Global Step: 22200   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 09:51:02,671-Speed 569.93 samples/sec   Loss 14.1424   LearningRate 0.100000   Epoch: 1   Global Step: 22300   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 09:52:32,498-Speed 570.03 samples/sec   Loss 14.2842   LearningRate 0.100000   Epoch: 1   Global Step: 22400   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 09:54:02,602-Speed 568.27 samples/sec   Loss 14.1733   LearningRate 0.100000   Epoch: 1   Global Step: 22500   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 09:55:32,594-Speed 568.99 samples/sec   Loss 14.2101   LearningRate 0.100000   Epoch: 1   Global Step: 22600   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 09:57:02,437-Speed 569.93 samples/sec   Loss 14.0674   LearningRate 0.100000   Epoch: 1   Global Step: 22700   Fp16 Grad Scale: 32768   Required: 113 hours
+/usr/local/lib/python3.11/dist-packages/torch/utils/data/dataloader.py:617: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+Training: 2025-05-09 09:59:15,668-Speed 384.31 samples/sec   Loss 13.8089   LearningRate 0.100000   Epoch: 2   Global Step: 22800   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:00:45,342-Speed 571.01 samples/sec   Loss 13.2901   LearningRate 0.100000   Epoch: 2   Global Step: 22900   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:02:15,174-Speed 569.99 samples/sec   Loss 13.3737   LearningRate 0.100000   Epoch: 2   Global Step: 23000   Fp16 Grad Scale: 32768   Required: 113 hours
+testing verification..
+(12000, 512)
+infer time 33.806445000000075
+Training: 2025-05-09 10:02:52,249-[lfw][23000]XNorm: 24.593786
+Training: 2025-05-09 10:02:52,249-[lfw][23000]Accuracy-Flip: 0.97800+-0.00470
+Training: 2025-05-09 10:02:52,249-[lfw][23000]Accuracy-Highest: 0.97800
+Training: 2025-05-09 10:02:52,249-[+][23000]Score / Score-Highest: 0.97800 / 0.97783
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.978.pth
+Training: 2025-05-09 10:04:22,512-Speed 402.10 samples/sec   Loss 13.3771   LearningRate 0.100000   Epoch: 2   Global Step: 23100   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:05:52,543-Speed 568.74 samples/sec   Loss 13.4803   LearningRate 0.100000   Epoch: 2   Global Step: 23200   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:07:22,315-Speed 570.38 samples/sec   Loss 13.4197   LearningRate 0.100000   Epoch: 2   Global Step: 23300   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:08:52,152-Speed 569.97 samples/sec   Loss 13.4380   LearningRate 0.100000   Epoch: 2   Global Step: 23400   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:10:22,211-Speed 568.56 samples/sec   Loss 13.5177   LearningRate 0.100000   Epoch: 2   Global Step: 23500   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:11:52,055-Speed 569.92 samples/sec   Loss 13.5874   LearningRate 0.100000   Epoch: 2   Global Step: 23600   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:13:21,801-Speed 570.54 samples/sec   Loss 13.4984   LearningRate 0.100000   Epoch: 2   Global Step: 23700   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:14:51,741-Speed 569.32 samples/sec   Loss 13.5769   LearningRate 0.100000   Epoch: 2   Global Step: 23800   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:16:21,688-Speed 569.27 samples/sec   Loss 13.6098   LearningRate 0.100000   Epoch: 2   Global Step: 23900   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:17:51,623-Speed 569.35 samples/sec   Loss 13.5951   LearningRate 0.100000   Epoch: 2   Global Step: 24000   Fp16 Grad Scale: 32768   Required: 113 hours
+testing verification..
+(12000, 512)
+infer time 33.81459899999996
+Training: 2025-05-09 10:18:28,500-[lfw][24000]XNorm: 25.959696
+Training: 2025-05-09 10:18:28,500-[lfw][24000]Accuracy-Flip: 0.97483+-0.00804
+Training: 2025-05-09 10:18:28,500-[lfw][24000]Accuracy-Highest: 0.97800
+Training: 2025-05-09 10:18:28,500-[+][24000]Score / Score-Highest: 0.97483 / 0.97800
+Training: 2025-05-09 10:19:58,457-Speed 403.70 samples/sec   Loss 13.5686   LearningRate 0.100000   Epoch: 2   Global Step: 24100   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:21:28,410-Speed 569.24 samples/sec   Loss 13.5934   LearningRate 0.100000   Epoch: 2   Global Step: 24200   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:22:58,440-Speed 568.74 samples/sec   Loss 13.6556   LearningRate 0.100000   Epoch: 2   Global Step: 24300   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:24:28,358-Speed 569.45 samples/sec   Loss 13.6152   LearningRate 0.100000   Epoch: 2   Global Step: 24400   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:25:58,273-Speed 569.47 samples/sec   Loss 13.6904   LearningRate 0.100000   Epoch: 2   Global Step: 24500   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:27:28,155-Speed 569.68 samples/sec   Loss 13.6261   LearningRate 0.100000   Epoch: 2   Global Step: 24600   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:28:58,035-Speed 569.69 samples/sec   Loss 13.5783   LearningRate 0.100000   Epoch: 2   Global Step: 24700   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:30:27,947-Speed 569.48 samples/sec   Loss 13.6753   LearningRate 0.100000   Epoch: 2   Global Step: 24800   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:31:57,707-Speed 570.45 samples/sec   Loss 13.6687   LearningRate 0.100000   Epoch: 2   Global Step: 24900   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:33:27,455-Speed 570.54 samples/sec   Loss 13.6018   LearningRate 0.100000   Epoch: 2   Global Step: 25000   Fp16 Grad Scale: 32768   Required: 113 hours
+testing verification..
+(12000, 512)
+infer time 33.778632999999935
+Training: 2025-05-09 10:34:04,216-[lfw][25000]XNorm: 23.947152
+Training: 2025-05-09 10:34:04,216-[lfw][25000]Accuracy-Flip: 0.97367+-0.00799
+Training: 2025-05-09 10:34:04,217-[lfw][25000]Accuracy-Highest: 0.97800
+Training: 2025-05-09 10:34:04,217-[+][25000]Score / Score-Highest: 0.97367 / 0.97800
+Training: 2025-05-09 10:34:04,766-Pytorch Model Saved in '/kaggle/working/output/backbone.pth'
+Training: 2025-05-09 10:35:35,332-Speed 400.40 samples/sec   Loss 13.6001   LearningRate 0.100000   Epoch: 2   Global Step: 25100   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:37:05,349-Speed 568.82 samples/sec   Loss 13.6928   LearningRate 0.100000   Epoch: 2   Global Step: 25200   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:38:35,157-Speed 570.14 samples/sec   Loss 13.6427   LearningRate 0.100000   Epoch: 2   Global Step: 25300   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:40:04,922-Speed 570.42 samples/sec   Loss 13.6570   LearningRate 0.100000   Epoch: 2   Global Step: 25400   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:41:34,690-Speed 570.40 samples/sec   Loss 13.6427   LearningRate 0.100000   Epoch: 2   Global Step: 25500   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:43:04,583-Speed 569.60 samples/sec   Loss 13.5914   LearningRate 0.100000   Epoch: 2   Global Step: 25600   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:44:34,475-Speed 569.62 samples/sec   Loss 13.6390   LearningRate 0.100000   Epoch: 2   Global Step: 25700   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:46:04,430-Speed 569.22 samples/sec   Loss 13.6237   LearningRate 0.100000   Epoch: 2   Global Step: 25800   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:47:34,395-Speed 569.15 samples/sec   Loss 13.6734   LearningRate 0.100000   Epoch: 2   Global Step: 25900   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 10:49:04,334-Speed 569.31 samples/sec   Loss 13.5846   LearningRate 0.100000   Epoch: 2   Global Step: 26000   Fp16 Grad Scale: 32768   Required: 112 hours
+testing verification..
+(12000, 512)
+infer time 33.72969400000002
+Training: 2025-05-09 10:49:41,871-[lfw][26000]XNorm: 25.347929
+Training: 2025-05-09 10:49:41,877-[lfw][26000]Accuracy-Flip: 0.97750+-0.00821
+Training: 2025-05-09 10:49:41,877-[lfw][26000]Accuracy-Highest: 0.97800
+Training: 2025-05-09 10:49:41,877-[+][26000]Score / Score-Highest: 0.97750 / 0.97800
+Training: 2025-05-09 10:51:11,727-Speed 401.93 samples/sec   Loss 13.7069   LearningRate 0.100000   Epoch: 2   Global Step: 26100   Fp16 Grad Scale: 32768   Required: 113 hours
+Training: 2025-05-09 10:52:41,701-Speed 569.10 samples/sec   Loss 13.6462   LearningRate 0.100000   Epoch: 2   Global Step: 26200   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 10:54:11,675-Speed 569.10 samples/sec   Loss 13.5864   LearningRate 0.100000   Epoch: 2   Global Step: 26300   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 10:55:41,701-Speed 568.76 samples/sec   Loss 13.6088   LearningRate 0.100000   Epoch: 2   Global Step: 26400   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 10:57:11,715-Speed 568.85 samples/sec   Loss 13.6354   LearningRate 0.100000   Epoch: 2   Global Step: 26500   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 10:58:41,613-Speed 569.57 samples/sec   Loss 13.5420   LearningRate 0.100000   Epoch: 2   Global Step: 26600   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:00:11,471-Speed 569.83 samples/sec   Loss 13.5605   LearningRate 0.100000   Epoch: 2   Global Step: 26700   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:01:41,209-Speed 570.59 samples/sec   Loss 13.6125   LearningRate 0.100000   Epoch: 2   Global Step: 26800   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:03:10,973-Speed 570.43 samples/sec   Loss 13.5388   LearningRate 0.100000   Epoch: 2   Global Step: 26900   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:04:40,693-Speed 570.71 samples/sec   Loss 13.5560   LearningRate 0.100000   Epoch: 2   Global Step: 27000   Fp16 Grad Scale: 32768   Required: 112 hours
+testing verification..
+(12000, 512)
+infer time 33.85996900000002
+Training: 2025-05-09 11:05:18,256-[lfw][27000]XNorm: 23.512622
+Training: 2025-05-09 11:05:18,257-[lfw][27000]Accuracy-Flip: 0.97983+-0.00626
+Training: 2025-05-09 11:05:18,257-[lfw][27000]Accuracy-Highest: 0.97983
+Training: 2025-05-09 11:05:18,257-[+][27000]Score / Score-Highest: 0.97983 / 0.97800
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.9798333333333333.pth
+Training: 2025-05-09 11:06:48,452-Speed 400.78 samples/sec   Loss 13.6124   LearningRate 0.100000   Epoch: 2   Global Step: 27100   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:08:18,385-Speed 569.35 samples/sec   Loss 13.6037   LearningRate 0.100000   Epoch: 2   Global Step: 27200   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:09:47,978-Speed 571.52 samples/sec   Loss 13.5550   LearningRate 0.100000   Epoch: 2   Global Step: 27300   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:11:17,777-Speed 570.21 samples/sec   Loss 13.5551   LearningRate 0.100000   Epoch: 2   Global Step: 27400   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:12:47,727-Speed 569.25 samples/sec   Loss 13.5006   LearningRate 0.100000   Epoch: 2   Global Step: 27500   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:14:17,497-Speed 570.39 samples/sec   Loss 13.5099   LearningRate 0.100000   Epoch: 2   Global Step: 27600   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:15:47,154-Speed 571.11 samples/sec   Loss 13.4432   LearningRate 0.100000   Epoch: 2   Global Step: 27700   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:17:16,783-Speed 571.29 samples/sec   Loss 13.5209   LearningRate 0.100000   Epoch: 2   Global Step: 27800   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:18:46,573-Speed 570.27 samples/sec   Loss 13.5075   LearningRate 0.100000   Epoch: 2   Global Step: 27900   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:20:16,529-Speed 569.21 samples/sec   Loss 13.5322   LearningRate 0.100000   Epoch: 2   Global Step: 28000   Fp16 Grad Scale: 32768   Required: 112 hours
+testing verification..
+(12000, 512)
+infer time 33.811921999999946
+Training: 2025-05-09 11:20:53,351-[lfw][28000]XNorm: 24.931590
+Training: 2025-05-09 11:20:53,366-[lfw][28000]Accuracy-Flip: 0.97800+-0.00433
+Training: 2025-05-09 11:20:53,366-[lfw][28000]Accuracy-Highest: 0.97983
+Training: 2025-05-09 11:20:53,366-[+][28000]Score / Score-Highest: 0.97800 / 0.97983
+Training: 2025-05-09 11:22:23,055-Speed 404.68 samples/sec   Loss 13.5123   LearningRate 0.100000   Epoch: 2   Global Step: 28100   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:23:52,862-Speed 570.15 samples/sec   Loss 13.5078   LearningRate 0.100000   Epoch: 2   Global Step: 28200   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:25:22,450-Speed 571.55 samples/sec   Loss 13.4467   LearningRate 0.100000   Epoch: 2   Global Step: 28300   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:26:52,158-Speed 570.78 samples/sec   Loss 13.5019   LearningRate 0.100000   Epoch: 2   Global Step: 28400   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:28:22,063-Speed 569.53 samples/sec   Loss 13.5004   LearningRate 0.100000   Epoch: 2   Global Step: 28500   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:29:51,728-Speed 571.06 samples/sec   Loss 13.4145   LearningRate 0.100000   Epoch: 2   Global Step: 28600   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:31:21,393-Speed 571.06 samples/sec   Loss 13.4664   LearningRate 0.100000   Epoch: 2   Global Step: 28700   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:32:51,283-Speed 569.64 samples/sec   Loss 13.4099   LearningRate 0.100000   Epoch: 2   Global Step: 28800   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:34:21,122-Speed 569.95 samples/sec   Loss 13.4520   LearningRate 0.100000   Epoch: 2   Global Step: 28900   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:35:50,748-Speed 571.31 samples/sec   Loss 13.3712   LearningRate 0.100000   Epoch: 2   Global Step: 29000   Fp16 Grad Scale: 32768   Required: 112 hours
+testing verification..
+(12000, 512)
+infer time 33.73505599999997
+Training: 2025-05-09 11:36:28,532-[lfw][29000]XNorm: 22.944711
+Training: 2025-05-09 11:36:28,532-[lfw][29000]Accuracy-Flip: 0.97833+-0.00628
+Training: 2025-05-09 11:36:28,533-[lfw][29000]Accuracy-Highest: 0.97983
+Training: 2025-05-09 11:36:28,533-[+][29000]Score / Score-Highest: 0.97833 / 0.97983
+Training: 2025-05-09 11:37:58,441-Speed 400.98 samples/sec   Loss 13.4147   LearningRate 0.100000   Epoch: 2   Global Step: 29100   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:39:28,348-Speed 569.52 samples/sec   Loss 13.4944   LearningRate 0.100000   Epoch: 2   Global Step: 29200   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:40:58,115-Speed 570.40 samples/sec   Loss 13.4610   LearningRate 0.100000   Epoch: 2   Global Step: 29300   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:42:27,919-Speed 570.17 samples/sec   Loss 13.3208   LearningRate 0.100000   Epoch: 2   Global Step: 29400   Fp16 Grad Scale: 32768   Required: 112 hours
+Training: 2025-05-09 11:43:57,572-Speed 571.13 samples/sec   Loss 13.4369   LearningRate 0.100000   Epoch: 2   Global Step: 29500   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 11:45:27,268-Speed 570.86 samples/sec   Loss 13.4558   LearningRate 0.100000   Epoch: 2   Global Step: 29600   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 11:46:57,101-Speed 569.95 samples/sec   Loss 13.3692   LearningRate 0.100000   Epoch: 2   Global Step: 29700   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 11:48:26,830-Speed 570.65 samples/sec   Loss 13.4135   LearningRate 0.100000   Epoch: 2   Global Step: 29800   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 11:49:56,606-Speed 570.35 samples/sec   Loss 13.4107   LearningRate 0.100000   Epoch: 2   Global Step: 29900   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 11:51:26,376-Speed 570.39 samples/sec   Loss 13.3570   LearningRate 0.100000   Epoch: 2   Global Step: 30000   Fp16 Grad Scale: 32768   Required: 111 hours
+testing verification..
+(12000, 512)
+infer time 33.97216700000004
+Training: 2025-05-09 11:52:04,291-[lfw][30000]XNorm: 25.961252
+Training: 2025-05-09 11:52:04,291-[lfw][30000]Accuracy-Flip: 0.98100+-0.00484
+Training: 2025-05-09 11:52:04,291-[lfw][30000]Accuracy-Highest: 0.98100
+Training: 2025-05-09 11:52:04,291-[+][30000]Score / Score-Highest: 0.98100 / 0.97983
+Saved as best checkpoint to /kaggle/working/tmp/backbone_0.9809999999999999.pth
+Training: 2025-05-09 11:52:05,221-Pytorch Model Saved in '/kaggle/working/output/backbone.pth'
+Training: 2025-05-09 11:53:35,849-Speed 395.47 samples/sec   Loss 13.4476   LearningRate 0.100000   Epoch: 2   Global Step: 30100   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 11:55:05,738-Speed 569.76 samples/sec   Loss 13.3484   LearningRate 0.100000   Epoch: 2   Global Step: 30200   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 11:56:35,494-Speed 570.48 samples/sec   Loss 13.3785   LearningRate 0.100000   Epoch: 2   Global Step: 30300   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 11:58:05,372-Speed 569.70 samples/sec   Loss 13.3594   LearningRate 0.100000   Epoch: 2   Global Step: 30400   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 11:59:35,031-Speed 571.10 samples/sec   Loss 13.3459   LearningRate 0.100000   Epoch: 2   Global Step: 30500   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 12:01:04,622-Speed 571.53 samples/sec   Loss 13.3537   LearningRate 0.100000   Epoch: 2   Global Step: 30600   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 12:02:34,303-Speed 570.95 samples/sec   Loss 13.3838   LearningRate 0.100000   Epoch: 2   Global Step: 30700   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 12:04:03,967-Speed 571.07 samples/sec   Loss 13.3730   LearningRate 0.100000   Epoch: 2   Global Step: 30800   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 12:05:33,654-Speed 570.91 samples/sec   Loss 13.3319   LearningRate 0.100000   Epoch: 2   Global Step: 30900   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 12:07:03,416-Speed 570.44 samples/sec   Loss 13.4106   LearningRate 0.100000   Epoch: 2   Global Step: 31000   Fp16 Grad Scale: 32768   Required: 111 hours
+testing verification..
+(12000, 512)
+infer time 34.02474800000006
+Training: 2025-05-09 12:07:40,594-[lfw][31000]XNorm: 25.223554
+Training: 2025-05-09 12:07:40,595-[lfw][31000]Accuracy-Flip: 0.98050+-0.00641
+Training: 2025-05-09 12:07:40,595-[lfw][31000]Accuracy-Highest: 0.98100
+Training: 2025-05-09 12:07:40,595-[+][31000]Score / Score-Highest: 0.98050 / 0.98100
+Training: 2025-05-09 12:09:10,318-Speed 403.48 samples/sec   Loss 13.3453   LearningRate 0.100000   Epoch: 2   Global Step: 31100   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 12:10:40,194-Speed 569.72 samples/sec   Loss 13.3126   LearningRate 0.100000   Epoch: 2   Global Step: 31200   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 12:12:09,713-Speed 571.99 samples/sec   Loss 13.2641   LearningRate 0.100000   Epoch: 2   Global Step: 31300   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 12:13:39,215-Speed 572.09 samples/sec   Loss 13.2139   LearningRate 0.100000   Epoch: 2   Global Step: 31400   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 12:15:09,131-Speed 569.47 samples/sec   Loss 13.2866   LearningRate 0.100000   Epoch: 2   Global Step: 31500   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 12:16:38,728-Speed 571.71 samples/sec   Loss 13.2279   LearningRate 0.100000   Epoch: 2   Global Step: 31600   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 12:18:08,347-Speed 571.59 samples/sec   Loss 13.2594   LearningRate 0.100000   Epoch: 2   Global Step: 31700   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 12:19:38,243-Speed 569.59 samples/sec   Loss 13.2909   LearningRate 0.100000   Epoch: 2   Global Step: 31800   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 12:21:08,116-Speed 569.73 samples/sec   Loss 13.1944   LearningRate 0.100000   Epoch: 2   Global Step: 31900   Fp16 Grad Scale: 32768   Required: 111 hours
+Training: 2025-05-09 12:22:37,995-Speed 569.70 samples/sec   Loss 13.2542   LearningRate 0.100000   Epoch: 2   Global Step: 32000   Fp16 Grad Scale: 32768   Required: 111 hours
+testing verification..
+(12000, 512)
+infer time 33.999627999999944
+Training: 2025-05-09 12:23:16,173-[lfw][32000]XNorm: 24.644046
+Training: 2025-05-09 12:23:16,174-[lfw][32000]Accuracy-Flip: 0.98017+-0.00639
+Training: 2025-05-09 12:23:16,174-[lfw][32000]Accuracy-Highest: 0.98100
+Training: 2025-05-09 12:23:16,174-[+][32000]Score / Score-Highest: 0.98017 / 0.98100
