@@ -16,18 +16,19 @@ We modified and extended **PartialFC** to support both **AdaFace** and **Elastic
 
 ---
 
-## 🌐 Project Links
+## Setup
+This line code of 2 folder can be run at Kaggle or Python 3.11 
 
-| [Paper (Coming Soon)](https://your-paper-link) | [Demo Video (Optional)](https://your-demo-link) | [Project Page](https://your-project-page) |
+Cell to install the required package:
+```bash
+!pip install tensorboard
+!pip install easydict
+!pip install mxnet
+!pip install onnx
+!pip install scikit-learn
+```
 
----
 
-## 🚀 Updates
-
-- [05/2025] Training scripts for **DFRNet** (PartialFC + AdaFace + ElasticFace) are released.
-- [04/2025] Repository is online.
-
----
 
 ## 💾 Setup & Installation
 
