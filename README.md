@@ -19,16 +19,29 @@ We modified and extended **PartialFC** to support both **AdaFace** and **Elastic
 ## Setup
 This line code of 2 folder can be run at Kaggle or Python 3.11 
 
-Install all required package
+Install all required package:
 
 ```bash
 !pip install -r requirement.txt
 ```
 
-
-##  Setup & Installation
-
+Clone at repo:
 ```bash
-git clone https://github.com/yourname/dfrnet.git
-cd dfrnet
-pip install -r requirements.txt
+https://github.com/ThongNguyenQuoc/DFRNet.git
+cd DFRNet/DFRNet
+```
+
+##  Data Preparation
+We train model 'DFRNet' using:
+
+### CASIA-Webface (10K ids/0.5M images) 
+[GDrive](https://drive.google.com/file/d/1KxNCrXzln0lal3N4JiYl9cFOIhT78y1l/view?usp=sharing)
+
+### MS1M-ArcFace (85K ids/5.8M images) (MS1MV2)
+
+[GDrive](https://drive.google.com/file/d/1SXS4-Am3bsKSK615qbYdbA_FMVh3sAvR/view?usp=sharing)
+
+### MS1M-RetinaFace (MS1MV3)
+
+[GDrive](https://drive.google.com/file/d/1JgmzL9OLTqDAZE86pBgETtSQL4USKTFy/view?usp=sharing)
+
