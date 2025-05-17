@@ -84,3 +84,34 @@ We train model 'DFRNet' using:
 | 22700       | 1    | MS1MV2    | 97.783           |
 | 34100       | 2    | MS1MV2    | 98.100           |
 | 41000       | 3    | MS1MV2    | 98.100           |
+
+## Citing
+If you find our work useful for your research, please consider citing:
+```BibTeX
+@inproceedings{Boutros_2022_CVPR,
+    author    = {Boutros, Fadi and Damer, Naser and Kirchbuchner, Florian and Kuijper, Arjan},
+    title     = {ElasticFace: Elastic Margin Loss for Deep Face Recognition},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
+    year      = {2022},
+    pages     = {1578-1587}
+}
+
+@inproceedings{Kim_2022_CVPR,
+    author    = {Kim, Minchul and Jain, Anil K. and Liu, Xiaoming},
+    title     = {AdaFace: Quality Adaptive Margin for Face Recognition},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2022},
+    pages     = {18750-18759}
+}
+
+@inproceedings{An_2021_ICCV,
+    author    = {An, Xiang and Zhu, Xuhan and Gao, Yuan and Xiao, Yang and Zhao, Yongle and Feng, Ziyong and Wu, Lan and Qin, Bin and Zhang, Ming and Zhang, Debing and Fu, Ying},
+    title     = {Partial FC: Training 10 Million Identities on a Single Machine},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops},
+    month     = {October},
+    year      = {2021},
+    pages     = {1445-1449}
+}
+```
