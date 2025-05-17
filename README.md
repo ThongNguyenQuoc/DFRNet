@@ -45,7 +45,7 @@ We train model 'DFRNet' using:
 
 [GDrive](https://drive.google.com/file/d/1JgmzL9OLTqDAZE86pBgETtSQL4USKTFy/view?usp=sharing)
 
-3. Download the training set (`MS1MV2-Arcface`) and place it in your directory. Each training dataset includes the following 10 files:
+### Download the training set (`MS1MV2-Arcface`) and place it in your directory. Each training dataset includes the following 10 files:
 
 ```Shell
     faces_emore/
@@ -61,3 +61,26 @@ We train model 'DFRNet' using:
        vgg2_fp.bin
 ```
 
+## Evaluat
+### 6.1. ElasticFace
+
+## Training Results
+
+| Global Step | Margin (M) | Epoch | Dataset   | LFW Accuracy (%) |
+|-------------|------------|-------|-----------|------------------|
+| 352532      | 0.5        | 30    | MS1MV2    | 99.117           |
+| 358218      | 0.6        | 31    | MS1MV2    | 99.223           |
+| 375276      | 0.6        | 32    | MS1MV2    | 99.167           |
+
+
+
+### 6.2. AdaFace + PartialFC
+
+## Training Results
+
+| Global Step |Epoch | Dataset   | LFW Accuracy (%) |
+|-------------|------|---------- |------------------|
+| 11300       | 0    | MS1MV2    | 96.467           |
+| 22700       | 1    | MS1MV2    | 97.783           |
+| 34100       | 2    | MS1MV2    | 98.100           |
+| 41000       | 3    | MS1MV2    | 98.100           |
