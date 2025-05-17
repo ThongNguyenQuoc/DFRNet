@@ -19,18 +19,14 @@ We modified and extended **PartialFC** to support both **AdaFace** and **Elastic
 ## Setup
 This line code of 2 folder can be run at Kaggle or Python 3.11 
 
-Cell to install the required package:
+Install all required package
+
 ```bash
-!pip install tensorboard
-!pip install easydict
-!pip install mxnet
-!pip install onnx
-!pip install scikit-learn
+!pip install -r requirement.txt
 ```
 
 
-
-## 💾 Setup & Installation
+##  Setup & Installation
 
 ```bash
 git clone https://github.com/yourname/dfrnet.git
